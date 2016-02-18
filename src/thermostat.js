@@ -1,6 +1,7 @@
 function Thermostat() {
   this.temperature = 20;
-  MIN_TEMP = 10;
+  MIN_TEMP         = 10;
+  this.POWER_SAVING     = true;
 }
 
 Thermostat.prototype.upButton = function() {
@@ -10,4 +11,13 @@ Thermostat.prototype.upButton = function() {
 Thermostat.prototype.downButton = function() {
   if (this.temperature <= MIN_TEMP) throw ('Min Temp reached');
   this.temperature -= 1;
+};
+
+Thermostat.prototype.powerSavingButton = function() {
+  if (this.POWER_SAVING === true) {
+    this.POWER_SAVING = false;
+  }
+  else {
+    this.POWER_SAVING = true;
+  }
 };

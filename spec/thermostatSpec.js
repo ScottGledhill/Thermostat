@@ -24,4 +24,11 @@ describe('Thermostat', function() {
       expect(function() {thermostat.downButton();}).toThrow('Min Temp reached');
     });
   });
+
+  describe('power', function() {
+
+    it("has #POWER_SAVING set to 'true' by default", function() {
+      expect(thermostat.POWER_SAVING).toEqual(true);
+    });
+  });
 });
