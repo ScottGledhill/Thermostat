@@ -18,5 +18,10 @@ describe('Thermostat', function() {
       thermostat.downButton();
       expect(thermostat.temperature).toEqual(19);
     });
+
+    it('can\'t go below minimum temp', function() {
+      thermostat.temperature = MIN_TEMP;
+      expect(function() {thermostat.downButton();}).toThrow('Min Temp reached');
+    });
   });
 });
