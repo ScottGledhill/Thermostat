@@ -25,10 +25,15 @@ describe('Thermostat', function() {
     });
   });
 
-  describe('power', function() {
+  describe('power saving', function() {
 
-    it("has #POWER_SAVING set to 'true' by default", function() {
+    it("set to 'true' by default", function() {
       expect(thermostat.POWER_SAVING).toEqual(true);
     });
   });
-});
+
+    it('Max temp is 25 when on', function() {
+      thermostat.temperature = 25;
+      expect(function() {thermostat.upButton();}).toThrow('Max Temp reached');
+    });
+  });
