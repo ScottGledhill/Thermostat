@@ -36,7 +36,7 @@ describe('Thermostat', function() {
     it("set to 'true' by default", function() {
       expect(thermostat.POWER_SAVING).toEqual(true);
     });
-  });
+
 
     it('Max temp is 25 when on', function() {
       thermostat.temperature = 25;
@@ -49,3 +49,23 @@ describe('Thermostat', function() {
       expect(function() {thermostat.upButton();}).toThrow('Max Temp reached');
     });
   });
+  describe('Colour', function() {
+    it('is green when below 18', function () {
+      thermostat.temperature = 16;
+      thermostat.upButton();
+      expect(thermostat.COLOUR).toBe('Green');
+    });
+
+    it('is green when below 18', function () {
+      thermostat.temperature = 22;
+      thermostat.upButton();
+      expect(thermostat.COLOUR).toBe('Yellow');
+    });
+
+    it('is green when below 18', function () {
+      thermostat.temperature = 29;
+      thermostat.upButton();
+      expect(thermostat.COLOUR).toBe('Red');
+    });
+  });
+});
