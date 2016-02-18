@@ -5,8 +5,9 @@ function Thermostat() {
 }
 
 Thermostat.prototype.upButton = function() {
-  if (this.POWER_SAVING === true && this.temperature >= 25) throw ('Max Temp reached');
-   this.temperature += 1;
+  if (this.POWER_SAVING === false && this.temperature >= 32) throw ('Max Temp reached');
+  else if (this.POWER_SAVING === true && this.temperature >= 25) throw ('Max Temp reached');
+  else this.temperature += 1;
 };
 
 Thermostat.prototype.downButton = function() {
@@ -21,4 +22,8 @@ Thermostat.prototype.powerSavingButton = function() {
   else {
     this.POWER_SAVING = true;
   }
+};
+
+Thermostat.prototype.tempReset = function() {
+  this.temperature = 20;
 };

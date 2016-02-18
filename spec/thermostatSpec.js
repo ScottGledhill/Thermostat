@@ -23,6 +23,12 @@ describe('Thermostat', function() {
       thermostat.temperature = MIN_TEMP;
       expect(function() {thermostat.downButton();}).toThrow('Min Temp reached');
     });
+
+    it('can be reset', function() {
+      thermostat.upButton();
+      thermostat.tempReset();
+      expect(thermostat.temperature).toEqual(20);
+    });
   });
 
   describe('power saving', function() {
@@ -34,6 +40,12 @@ describe('Thermostat', function() {
 
     it('Max temp is 25 when on', function() {
       thermostat.temperature = 25;
+      expect(function() {thermostat.upButton();}).toThrow('Max Temp reached');
+    });
+
+    it('Max temp is 25 when on', function() {
+      thermostat.temperature = 32;
+      thermostat.powerSavingButton();
       expect(function() {thermostat.upButton();}).toThrow('Max Temp reached');
     });
   });
