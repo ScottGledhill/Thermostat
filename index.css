@@ -1,0 +1,20 @@
+
+
+html {
+  background: url("/Users/ScottGledhill/Desktop/nado.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.Green {
+  color: green;
+}
+
+.Yellow {
+  color: yellow;
+}
+.Red {
+  color: red;
+}
