@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Thermostat </title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="js/thermostat.js"></script>
+  <script src="js/interface.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js"> </script>
+</head>
+
+<body>
+  <section id="section_1" >
+    <h1 id="temperature"></h1>
+
+    <nav class="temp_buttons">
+      <button id="increase-temperature">Up
+      </button>
+      <button id="decrease-temperature">Down</button>
+      <button id="reset-temperature">Reset</button>
+    </nav>
+
+    <nav class="power_buttons">
+      <button id="power-save-on">Start Power Saving</button>
+      <button id="power-save-off">Stop Power Saving</button>
+    </nav>
+   <h4 id="psm">  Power Saving Mode Is <span id="power-saving-status">On</span></h4>
+  </section>
+  <section id="section_2">
+    <h5> City name: </h5>
+    <h6 id="city-name">  </h6>
+    <h5> Temperature: </h5>
+    <h6 id="city-temperature"></h6>
+    <h5> Wind: </h5>
+    <h6 id="city-wind"></h6>
+    <h5> Weather: </h5>
+    <h6 id="city-weather"></h6>
+    <form id="select-city">
+      <input id="current-city" type ="text" name="q" placeholder="Enter a city"></input>
+      <input id="submit_city" type ="submit"></input>
+    </form>
+  </section>
+  <div class="pictures">
+    <section id="wind_pic">
+    </section>
+    <section id="weather_pic">
+    </section>
+  </div>
+  <section id="map">
+    <div id="googleMap" style="width:500px;height:380px;"></div>
+  </section>
+
+</body>
+</html>
