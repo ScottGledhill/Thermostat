@@ -82,8 +82,8 @@ $( document ).ready(function() {
       cityWind = report.list[0].wind.speed;
       cityTemp = report.list[0].main.temp;
       cityWeather = report.list[0].weather[0].description;
-      lat = report.city.coord.lat
-      long = report.city.coord.lon
+      lat = report.city.coord.lat;
+      long = report.city.coord.long;
       console.log(lat);
       console.log(long);
       windLevel(cityWind);
@@ -95,5 +95,5 @@ $( document ).ready(function() {
       initialize(lat, long);
     });
   });
-  
+
   });
